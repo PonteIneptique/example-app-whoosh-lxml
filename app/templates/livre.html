@@ -1,0 +1,9 @@
+{% extends "container.html" %}
+{% block body %}
+    <h1>{{livre.livre_title}}</h1>
+    <ul>
+        {% for page in page %}
+            <li><a href="{{url_for("get_page", livre_id=page.livre_id, page_id=page.page_id)}}">Page</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

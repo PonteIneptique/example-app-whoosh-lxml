@@ -1,0 +1,9 @@
+{% extends "container.html" %}
+{% block body %}
+    <h1>Résultats de la recherche ({{results|length}})</h1>
+    <ul>
+        {% for r in results %}
+            <li><a href="{{url_for("get_page", livre_id=r.livre_id, page_id=r.page_id)}}">{{r.highlights("content") | safe}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
